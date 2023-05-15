@@ -59,11 +59,12 @@ class AdminController extends Controller
     resultado a la vista del anuncio_id */
     public function revisar_anuncio_id(Request $request){
         $id = $request['id'];
-        $datos_anuncio_id = DB::select('SELECT U.nombre AS nombre_anunciante, U.pais AS pais_anunciante, U.provincia AS provincia_anunciante, U.email, U.rol,
-        N.nombre, N.especie, N.urgente, N.sexo, N.fecha_nacimiento, N.edad, N.tamano, N.peso, N.nivel_actividad,
-        N.imagen_perfil, N.descripcion, N.pais, N.provincia, N.estado_general, N.vacunado, N.enfermo,
-        N.alergico, N.tratado, N.desparasitado, N.microchip, N.condiciones_entrega, A.id, A.id_anunciante,
-        A.id_animal, A.estado, A.telefono FROM Anuncios A, Users U, Animales N WHERE A.id ='.$id);
+        $datos_anuncio_id = DB::select('SELECT U.nombre AS nombre_anunciante, U.pais AS pais_anunciante,
+        U.provincia AS provincia_anunciante, U.email, U.rol,N.nombre, N.especie, N.urgente, N.sexo,
+        N.fecha_nacimiento, N.edad, N.tamano, N.peso, N.nivel_actividad,N.imagen_perfil, N.descripcion,
+        N.pais, N.provincia, N.estado_general, N.vacunado, N.enfermo,N.alergico, N.tratado, N.desparasitado,
+        N.microchip, N.condiciones_entrega, A.id, A.id_anunciante, A.id_animal, A.estado, A.telefono
+        FROM Anuncios A, Users U, Animales N WHERE A.id ='.intval($id).' AND U.id = A.id_anunciante AND N.id = A.id_animal;');
         /* $datos_anuncio_id = Anuncio::find($id); */
 
         return view('admin.revisar_anuncio_id')->with(compact('datos_anuncio_id'));
