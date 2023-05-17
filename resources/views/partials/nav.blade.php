@@ -43,7 +43,7 @@
           <img class="w-12 h-12 rounded-full border-2 border-slate-950" src="{{ asset('/img/sin_imagen.png') }}" alt="user photo">
           @else
 {{--           <img class="w-12 h-12 rounded-full border-2 border-slate-950" src="{{auth()->user()->imagen_perfil}}" alt="user photo">
- --}}          <img class="w-12 h-12 rounded-full border-2 border-slate-950" src="{{URL::asset(auth()->user()->imagen_perfil)}}" alt="user photo">
+ --}}          <img class="w-12 h-12 rounded-full border-2 border-slate-950 object-cover" src="{{URL::asset(auth()->user()->imagen_perfil)}}" alt="user photo">
           @endif
         </button>
         <!-- Dropdown menu -->

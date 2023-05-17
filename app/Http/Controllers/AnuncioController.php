@@ -128,6 +128,14 @@ class AnuncioController extends Controller
         return view('comun.mostrar_anuncio_id', ['anuncio_id' => $anuncio_id]);
     }
 
+    public function eliminar_anuncio_id(Request $request){
+        $id = $request['id'];
+
+        Anuncio::findOrFail($id)->delete();
+
+        return redirect()->to('/');
+    }
+
     public function mostrar_anuncios_usuario(Request $request){
         $id = $request['id'];
         $anuncios_usuario = Anuncio::join("animales", "anuncios.id_animal", "=", "animales.id")
@@ -142,7 +150,7 @@ class AnuncioController extends Controller
             ["anuncios.estado", "=", "Subido"],
             ["anuncios.id_anunciante", "=", $id]
         ])
-        ->paginate(15);
+        ->paginate(8);
 
         return view('comun.mostrar_anuncios_usuario', ['anuncios_usuario' => $anuncios_usuario]);
     }

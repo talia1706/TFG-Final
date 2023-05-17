@@ -19,7 +19,7 @@
         Anuncios pendientes
     </button>
 </div>
-<div class="mx-auto w-2/4 mt-20">
+<div class="mx-auto w-1/4 mt-20">
 <canvas id="myChart" style="width:100%;max-width:600px;" class="mt-10 "></canvas>
 </div>
 

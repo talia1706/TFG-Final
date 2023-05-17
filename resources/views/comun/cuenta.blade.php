@@ -32,8 +32,8 @@
                     <input class="mx-auto m-3" max id="imagen_perfil" name="imagen_perfil" accept="image/*" multiple type="file">
                 </div>
                 @else
-                <div class="mx-auto flex items-center justify-center">
-                    <img class="rounded-full mx-auto object-cover w-[150px]" src="{{URL::asset($datos_usuario_id['imagen_perfil'])}}" alt="Imagen usuario">
+                <div class="mx-auto flex items-center justify-center w-[220px] h-[200px]">
+                    <img id="imagen_perfil_animal" class="rounded-xl mx-auto object-cover {{-- w-[150px] --}}" src="{{URL::asset($datos_usuario_id['imagen_perfil'])}}" alt="Imagen usuario">
                 </div>
                 <div class="flex">
                 <input class="mx-auto m-3" max id="imagen_perfil" name="imagen_perfil" accept="image/*" multiple type="file">

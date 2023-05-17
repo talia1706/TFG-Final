@@ -19,6 +19,7 @@ class SuperusuarioController extends Controller
        $usuarios_registrados = DB::table('users')
             ->where('rol', 'asociacion')
             ->orWhere('rol', 'particular')
+            ->orWhere('rol', 'admin')
             ->get()->count();
 
 

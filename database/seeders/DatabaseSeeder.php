@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         $user->provincia = 'Huelva';
         $user->password = '1234';
         $user->rol = 'superusuario';
-        $user->imagen_perfil = '';
+        $user->imagen_perfil = './img/superusuario_imagen_perfil.jpg';
         $user->save();
         $user->syncRoles($user->rol);
     }

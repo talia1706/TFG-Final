@@ -6,6 +6,10 @@
     revisar --}}
 @if ($anuncios_totales->isEmpty())
 <p class="mx-auto text-center text-3xl m-10 font-semiboldtext-gray-900 uppercase mb-16">No se encontraron anuncios para revisar</p>
+<div class="mx-auto text-center mb-16 mt-40">
+    <a class="bg-yellow-500 p-4 m-10 rounded-full hover:bg-yellow-600 text-white uppercase text-lg" href="{{route('admin.historial_anuncios')}}">¿Quieres ver el historial de anuncios?</a>
+    <a class="bg-yellow-500 p-4 m-10 rounded-full hover:bg-yellow-600 text-white uppercase text-lg" href="{{route('admin.index')}}">Volver al menú principal</a>
+</div>
 @else
 <div class="relative overflow-x-auto sm:rounded-lg">
     <p class="mx-auto text-center text-2xl m-10 font-semibold bg-[#FFDEB4] text-gray-900 uppercase rounded-full p-5 w-2/4 border-4 border-zinc-200">Mostrando los datos de los anuncios para revisar</p>

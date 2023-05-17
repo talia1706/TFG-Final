@@ -75,6 +75,11 @@
                     clip-rule="evenodd" />
             </svg>
             <input required size="50" class="bg-transparent pl-2 outline-none border-none" type="password" class="form-control" id="contrasena" placeholder="Introduce la contraseña" name="password">
+            <div class="col">
+                <button type="button" onclick="mostrarContrasena()">
+                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M12 9.005a4 4 0 1 1 0 8a4 4 0 0 1 0-8zM12 5.5c4.613 0 8.596 3.15 9.701 7.564a.75.75 0 1 1-1.455.365a8.504 8.504 0 0 0-16.493.004a.75.75 0 0 1-1.456-.363A10.003 10.003 0 0 1 12 5.5z" fill="currentColor"></path></g></svg>
+                </button>
+              </div>
         </div>
 
         @error('password')
@@ -84,6 +89,15 @@
         <button type="submit" class="block w-full bg-green-700 mt-4 py-2 rounded-2xl text-white font-semibold mb-3">Añadir</button>
     </form>
     </div>
-
+<script>
+    function mostrarContrasena(){
+            var tipo = document.getElementById("contrasena");
+            if(tipo.type == "password"){
+                tipo.type = "text";
+            }else{
+                tipo.type = "password";
+            }
+        }
+</script>
 
 @endsection

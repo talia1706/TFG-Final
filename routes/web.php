@@ -10,36 +10,27 @@ use App\Http\Controllers\AsociacionController;
 use App\Http\Controllers\AnuncioController;
 use App\Http\Controllers\AdopcionController;
 
-
-/* Route::get('/', function () {
-    return view('welcome');
-})->name('inicio')->middleware('auth'); */
-
-Route::get('/', [AnuncioController::class, 'mostrar_anuncios'])->name('inicio');
-
-Route::get('/anuncio/{id}', [AnuncioController::class, 'mostrar_anuncio_id'])->name('comun.mostrar_anuncio_id')->middleware('auth');
-
-
-/* Route::get('/', [SuperusuarioController::class, 'index'])->name('superusuario.index')->middleware('auth');;
- */
+/* MÉTODOS GUEST */
 
 Route::get('/registro', [RegistroController::class, 'create'])->name('registro.index')->middleware('guest');
 
-Route::post('/registro', [RegistroController::class, 'store'])->name('registro.store');
-
 Route::get('/login', [LoginController::class, 'create'])->name('login.index')->middleware('guest');
+
+/* MÉTODOS SIN AUTH */
+
+Route::get('/', [AnuncioController::class, 'mostrar_anuncios'])->name('inicio');
+
+/* MÉTODOS AUTH */
+
+Route::get('/anuncio/{id}', [AnuncioController::class, 'mostrar_anuncio_id'])->name('comun.mostrar_anuncio_id')->middleware('auth');
+
+Route::post('/registro', [RegistroController::class, 'store'])->name('registro.store');
 
 Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('/logout', [LoginController::class, 'destroy'])->name('login.destroy')->middleware('auth');
 
-
-
-
 Route::get('/usuarios/{id}', [ComunController::class, 'consulta_id'])->name('comun.consulta_id')->middleware('auth');
-
-
-
 
 
  Route::get('/anunciar', [AnuncioController::class, 'anunciar_animales'])->name('comun.anunciar')->middleware('auth');
@@ -57,6 +48,8 @@ Route::get('/usuarios/{id}', [ComunController::class, 'consulta_id'])->name('com
  Route::get('/insertar_adopcion/{id_anuncio}/{id_adoptante}', [AdopcionController::class, 'insertar_adopcion'])->name('adopcion.insertar_adopcion');
 
  Route::get('/mostrar_anuncios_usuario/{id}', [AnuncioController::class, 'mostrar_anuncios_usuario'])->name('anuncio.mostrar_anuncios_usuario');
+
+ Route::get('/eliminar_anuncio/{id}', [AnuncioController::class, 'eliminar_anuncio_id'])->name('anuncio.eliminar_anuncio_id');
 
  Route::get('/mostrar_actividad_anuncio_id/{id}', [AdopcionController::class, 'mostrar_actividad_anuncio_id'])->name('adopcion.mostrar_actividad_anuncio_id');
 
@@ -108,7 +101,6 @@ Route::middleware('auth.superusuario')->group(function(){
 
     Route::get('/editar_usuarios', [SuperusuarioController::class, 'ver_usuarios'])->name('superusuario.ver_usuarios');
 
-    Route::get('/editar_anuncios', [SuperusuarioController::class, 'ver_anuncios'])->name('superusuario.ver_anuncios');
 
     Route::get('/editar_animales', [SuperusuarioController::class, 'ver_animales'])->name('superusuario.ver_animales');
 

@@ -9,7 +9,7 @@
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mx-auto">
               <div>
-                  <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Quiénes Somos</h2>
+                  <h2 class="mb-6 text-base font-bold text-gray-900 uppercase dark:text-white">Quiénes Somos</h2>
                   <ul class="text-gray-800 font-medium">
                       <li class="mb-4">
                           <a href="#" class="hover:underline">Saber más</a>
@@ -20,7 +20,7 @@
                   </ul>
               </div>
               <div >
-                  <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Recomendados</h2>
+                  <h2 class="mb-6 text-base font-bold text-gray-900 uppercase dark:text-white">Recomendados</h2>
                   <ul class="text-gray-800 font-medium">
                       <li class="mb-4">
                           <a href="#" class="hover:underline ">Cuida a tu animal</a>
@@ -31,7 +31,7 @@
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Legal</h2>
+                  <h2 class="mb-6 text-base font-bold text-gray-900 uppercase dark:text-white">Legal</h2>
                   <ul class="text-gray-800 font-medium">
                       <li class="mb-4">
                           <a href="#" class="hover:underline">Política de privacidad</a>
